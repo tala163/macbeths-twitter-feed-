@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Macbeth's Twitter Feed</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f8fa;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #14171a;
+      margin-top: 20px;
+    }
+    .tweet {
+      background: #e1e8ed;
+      border: 1px solid #ccd6dd;
+      border-radius: 10px;
+      margin: 20px auto;
+      padding: 15px;
+      max-width: 600px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: #14171a;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .profile-name {
+      font-weight: bold;
+    }
+    .handle {
+      color: #657786;
+      font-size: 0.9em;
+    }
+    .tweet-content {
+      margin-top: 10px;
+      font-size: 1em;
+      color: #14171a;
+    }
+    .tweet-footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      color: #657786;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Macbeth's Twitter Feed</h1>
+
+  <div id="tweets-container"></div>
+
+  <script>
+    const tweets = [
+      {
+        content: "POV: You just fought for your King and country, and you have demonstrated great honor, loyalty and bravery. (that's me 😁)",
+        date: "June 4, 1606"
+      },
+      {
+        content: "Banquo thinks these 3 mysterious witches are lying, but I think otherwise. Me being King sounds awesome, I'm dreaming of it.",
+        date: "June 5, 1606"
+      },
+      {
+        content: "No way! King Duncan has just crowned me the Thane of Cawdor because of my bravery in battle. (And I might become king. 😉)",
+        date: "June 6, 1606"
+      },
+      {
+        content: "I wonder if I'll ever become King like the witches predicted. 🥲",
+        date: "June 8, 1606"
+      },
+      {
+        content: "I am this close to becoming King! Watch your back Duncan... 😡",
+        date: "June 9, 1606"
+      },
+      {
+        content: "ARGHH!! I can't believe that Malcom will be the heir to the throne. #Frustrated😤",
+        date: "June 11, 1606"
+      },
+      {
+        content: "Behind my mask of loyalty, I am starting to fight dangerous thoughts. #watchout",
+        date: "June 12, 1606"
+      },
+      {
+        content: "Lady Macbeth got the 'tea' of the prophecy for me. We're about to go full crazy mode. 😎",
+        date: "June 14, 1606"
+      },
+      {
+        content: "My wife is willing to do whatever she can to make me King 👑. I'm excited.",
+        date: "June 15, 1606"
+      },
+      {
+        content: "Ambition's cool until your wife starts saying 'murder' with a straight face. What did I get myself into 😬? #second thoughts",
+        date: "June 18, 1606"
+      },
+      {
+        content: "Sometimes I wonder if we're willing to do whatever it takes for greatness... but is the price worth it?🤔",
+        date: "June 19, 1606"
+      },
+      {
+        content: "My Lady's pushing me hard on this. She says I gotta man up and go for it, but my gut's telling me to back off. #dilemma🧐",
+        date: "June 20, 1606"
+      },
+      {
+        content: "This plan could either make me King or ruin everything. Is it worth the risk? 🤐",
+        date: "June 20, 1606"
+      }
+    ];
+
+    function createTweet(tweet) {
+      return `
+        <div class="tweet">
+          <div class="profile">
+            <div class="profile-name">Macbeth</div>
+            <div class="handle">@macbeth_theking</div>
+          </div>
+          <div class="tweet-content">
+            ${tweet.content}
+          </div>
+          <div class="tweet-footer">
+            <div class="date">${tweet.date}</div>
+            <div class="likes-retweets">
+              <span>Likes: ${Math.floor(Math.random() * 1000)}</span> | 
+              <span>Retweets: ${Math.floor(Math.random() * 500)}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    const tweetsContainer = document.getElementById('tweets-container');
+    tweets.forEach(tweet => {
+      tweetsContainer.innerHTML += createTweet(tweet);
+    });
+  </script>
+
+</body>
+</html>
